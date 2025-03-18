@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<TableView fx:id="programmersTable" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vorofpie.teamcraft.controller.ProgrammerController">
+    <columns>
+        <TableColumn fx:id="nameColumn" text="Имя" />
+        <TableColumn fx:id="emailColumn" text="Email" />
+        <TableColumn fx:id="experienceYearsColumn" text="Опыт (лет)" />
+        <TableColumn fx:id="educationColumn" text="Образование" />
+        <TableColumn fx:id="companyColumn" text="Компания" />
+    </columns>
+</TableView>
