@@ -23,8 +23,6 @@ public class TechnologiesController {
     private TableColumn<Technology, String> categoryColumn;
     @FXML
     private TableColumn<Technology, Double> ratingColumn;
-    @FXML
-    private TableColumn<Technology, Boolean> isRequiredColumn;
 
     private final TechnologyRepository technologyRepository = new TechnologyRepository();
 
@@ -36,7 +34,6 @@ public class TechnologiesController {
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         categoryColumn.setCellValueFactory(new PropertyValueFactory<>("category"));
         ratingColumn.setCellValueFactory(new PropertyValueFactory<>("rating"));
-        isRequiredColumn.setCellValueFactory(new PropertyValueFactory<>("isRequired"));
 
         loadTechnologies();
     }
@@ -84,7 +81,6 @@ public class TechnologiesController {
                 technology.setName(nameField.getText());
                 technology.setCategory(categoryField.getText());
                 technology.setRating(Double.parseDouble(ratingField.getText()));
-                technology.setIsRequired(isRequiredCheckBox.isSelected());
                 return technology;
             }
             return null;

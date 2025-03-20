@@ -17,7 +17,6 @@
             <TableColumn text="Название" fx:id="nameColumn" prefWidth="150.0"/>
             <TableColumn text="Категория" fx:id="categoryColumn" prefWidth="150.0"/>
             <TableColumn text="Рейтинг" fx:id="ratingColumn" prefWidth="100.0"/>
-            <TableColumn text="Обязательная" fx:id="isRequiredColumn" prefWidth="100.0"/>
         </columns>
     </TableView>
 

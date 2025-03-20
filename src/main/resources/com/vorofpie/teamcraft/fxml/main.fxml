@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.AnchorPane?>
-
 <BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
     <!-- Верхняя панель с меню -->
     <top>
         <MenuBar>
             <Menu text="Файл">
-                <MenuItem text="Сохранить" />
-                <MenuItem text="Загрузить" />
-                <MenuItem text="Выход" />
+                <MenuItem text="Сохранить"/>
+                <MenuItem text="Загрузить"/>
+                <MenuItem text="Выход"/>
             </Menu>
             <Menu text="Помощь">
-                <MenuItem text="О программе" />
+                <MenuItem text="О программе"/>
             </Menu>
         </MenuBar>
     </top>
@@ -28,19 +22,25 @@
         <TabPane>
             <!-- Вкладка Программисты -->
             <Tab text="Программисты" closable="false">
-                <fx:include source="programmers-tab.fxml" />
+                <fx:include source="programmers-tab.fxml"/>
             </Tab>
 
             <!-- Вкладка Технологии -->
             <Tab text="Технологии" closable="false">
-                <fx:include source="technologies-tab.fxml" />
+                <fx:include source="technologies-tab.fxml"/>
 
             </Tab>
 
 
             <!-- Вкладка Проекты -->
             <Tab text="Проекты" closable="false">
-                <fx:include source="projects-tab.fxml" />
+                <fx:include source="projects-tab.fxml"/>
+
+            </Tab>
+
+            <!-- Вкладка Проекты -->
+            <Tab text="Создать группу" closable="false">
+                <fx:include source="groups-tab.fxml"/>
 
             </Tab>
 

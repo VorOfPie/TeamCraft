@@ -31,15 +31,9 @@ public class Technology {
     @Column(name = "rating")
     private Double rating;
 
-    @Column(name = "is_required")
-    private Boolean isRequired;
 
     @OneToMany(mappedBy = "technology", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<SkillLevel> skillLevels = new HashSet<>();
 
 
-    public void addSkillLevel(SkillLevel skillLevel) {
-        skillLevels.add(skillLevel);
-        skillLevel.setTechnology(this);
-    }
 }

@@ -1,32 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.vorofpie.teamcraft.controller.GroupsTabController"
-            prefHeight="400.0" prefWidth="600.0">
+            fx:controller="com.vorofpie.teamcraft.controller.GroupsTabController">
+    <HBox spacing="20" layoutX="10" layoutY="10">
+        <!-- Левая часть: Форма создания группы -->
+        <VBox spacing="10">
+            <!-- Поле для ввода названия группы -->
+            <Label text="Название группы:"/>
+            <TextField fx:id="groupNameField" promptText="Введите название группы"/>
 
-    <VBox spacing="10" layoutX="20" layoutY="20">
-        <Label text="Название проекта:" />
-        <TextField fx:id="projectNameField" />
+            <!-- Поле для ввода названия проекта -->
+            <Label text="Название проекта:"/>
+            <TextField fx:id="projectNameField" promptText="Введите название проекта"/>
 
-        <Label text="Название группы:" />
-        <TextField fx:id="groupNameField" />
+            <!-- Спиннер для выбора количества человек в группе -->
+            <Label text="Количество человек в группе:"/>
+            <Spinner fx:id="groupSizeSpinner"/>
 
-        <Label text="Количество программистов:" />
-        <Spinner fx:id="programmerCountSpinner" />
+            <!-- Кнопка для добавления технологии -->
+            <Button text="Добавить технологию" onAction="#openTechnologyDialog"/>
 
-        <Label text="Минимальный уровень навыков:" />
-        <Spinner fx:id="minLevelSpinner" />
+            <!-- Список выбранных технологий -->
+            <Label text="Выбранные технологии:"/>
+            <ListView fx:id="selectedTechnologiesList" prefWidth="400" maxWidth="400" prefHeight="150"/>
 
-        <Label text="Минимальный уровень группы:" />
-        <Spinner fx:id="minGroupLevelSpinner" />
+            <!-- Кнопка "Создать" -->
+            <Button text="Создать группу" onAction="#createGroup"/>
+        </VBox>
 
-        <Button fx:id="generateGroupsButton" text="Создать группу" />
+        <!-- Правая часть: Таблица программистов -->
+        <VBox spacing="10">
+            <Label text="Программисты в группе:"/>
+            <TableView fx:id="programmersTable" prefWidth="400" maxWidth="400" prefHeight="300">
+                <columns>
+                    <!-- Колонка для имени программиста -->
+                    <TableColumn fx:id="nameColumn" text="Имя" prefWidth="150">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="name"/>
+                        </cellValueFactory>
+                    </TableColumn>
 
-        <Label text="Результаты:" />
-        <VBox fx:id="groupsResultBox" spacing="5" />
-    </VBox>
+                    <!-- Колонка для опыта программиста -->
+                    <TableColumn fx:id="experienceColumn" text="Опыт (лет)" prefWidth="100">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="experienceYears"/>
+                        </cellValueFactory>
+                    </TableColumn>
 
+                    <!-- Колонка для образования программиста -->
+                    <TableColumn fx:id="educationColumn" text="Образование" prefWidth="150">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="education"/>
+                        </cellValueFactory>
+                    </TableColumn>
+
+                    <!-- Колонка для компании программиста -->
+                    <TableColumn fx:id="companyColumn" text="Компания" prefWidth="150">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="company"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+        </VBox>
+    </HBox>
 </AnchorPane>

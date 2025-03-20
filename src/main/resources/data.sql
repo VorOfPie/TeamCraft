@@ -30,16 +30,16 @@ INSERT INTO programmers (name, email, experience_years, education, company) VALU
 
 -- Вставка данных в таблицу technologies
 INSERT INTO technologies (name, category, rating, is_required) VALUES
-                                                                   ('Java', 'Backend', 0.9, true),
-                                                                   ('Python', 'Data Science', 0.85, false),
-                                                                   ('JavaScript', 'Web Development', 0.8, false),
-                                                                   ('C++', 'Systems Programming', 0.95, false),
-                                                                   ('SQL', 'Database', 1.0, true),
-                                                                   ('Ruby', 'Web Development', 0.75, false),
-                                                                   ('Go', 'Cloud', 0.8, true),
-                                                                   ('Kotlin', 'Mobile', 0.7, false),
-                                                                   ('Swift', 'Mobile', 0.85, false),
-                                                                   ('PHP', 'Web Development', 0.65, false);
+                                                                   ('Java', 'Backend', 0.9),
+                                                                   ('Python', 'Data Science', 0.85),
+                                                                   ('JavaScript', 'Web Development', 0.8),
+                                                                   ('C++', 'Systems Programming', 0.95),
+                                                                   ('SQL', 'Database', 1.0),
+                                                                   ('Ruby', 'Web Development', 0.75),
+                                                                   ('Go', 'Cloud', 0.8),
+                                                                   ('Kotlin', 'Mobile', 0.7),
+                                                                   ('Swift', 'Mobile', 0.85),
+                                                                   ('PHP', 'Web Development', 0.65);
 
 -- Вставка данных в таблицу skill_levels
 INSERT INTO skill_levels (programmer_id, technology_id, level) VALUES
