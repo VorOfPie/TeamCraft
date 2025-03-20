@@ -28,7 +28,7 @@ public class ProjectController {
     private TableView<Programmer> programmerTableView;
 
     private final ProjectRepository projectRepository = new ProjectRepository(); // Инициализация репозитория
-    private final ProgrammerRepository programmerRepository = new ProgrammerRepository(HibernateUtil.getSessionFactory());
+    private final ProgrammerRepository programmerRepository = new ProgrammerRepository();
 
     private ObservableList<Programmer> programmers = FXCollections.observableArrayList();
 

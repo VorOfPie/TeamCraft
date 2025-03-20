@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.vorofpie.teamcraft.controller.GroupsTabController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <VBox spacing="10" layoutX="20" layoutY="20">
+        <Label text="Название проекта:" />
+        <TextField fx:id="projectNameField" />
+
+        <Label text="Название группы:" />
+        <TextField fx:id="groupNameField" />
+
+        <Label text="Количество программистов:" />
+        <Spinner fx:id="programmerCountSpinner" />
+
+        <Label text="Минимальный уровень навыков:" />
+        <Spinner fx:id="minLevelSpinner" />
+
+        <Label text="Минимальный уровень группы:" />
+        <Spinner fx:id="minGroupLevelSpinner" />
+
+        <Button fx:id="generateGroupsButton" text="Создать группу" />
+
+        <Label text="Результаты:" />
+        <VBox fx:id="groupsResultBox" spacing="5" />
+    </VBox>
+
+</AnchorPane>

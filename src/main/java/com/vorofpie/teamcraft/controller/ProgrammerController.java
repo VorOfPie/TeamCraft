@@ -55,7 +55,7 @@ public class ProgrammerController {
         });
 
         // Инициализация репозитория и загрузка данных
-        programmerRepository = new ProgrammerRepository(HibernateUtil.getSessionFactory());
+        programmerRepository = new ProgrammerRepository();
         loadProgrammers();
     }
 
