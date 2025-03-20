@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -13,6 +14,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity
 @Table(name = "technologies")
+@ToString(exclude = "skillLevels")
 public class Technology {
 
     @Id
@@ -32,8 +34,9 @@ public class Technology {
     @Column(name = "is_required")
     private Boolean isRequired;
 
-    @OneToMany(mappedBy = "technology", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "technology", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<SkillLevel> skillLevels = new HashSet<>();
+
 
     public void addSkillLevel(SkillLevel skillLevel) {
         skillLevels.add(skillLevel);

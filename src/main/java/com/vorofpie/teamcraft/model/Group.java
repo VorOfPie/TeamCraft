@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.Set;
 
@@ -12,6 +13,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity
 @Table(name = "groups")
+@ToString(exclude = {"project", "programmers"})
 public class Group {
 
     @Id
@@ -25,6 +27,7 @@ public class Group {
     @ManyToOne
     @JoinColumn(name = "project_id", nullable = false)
     private Project project;
+
 
     @ManyToMany
     @JoinTable(
