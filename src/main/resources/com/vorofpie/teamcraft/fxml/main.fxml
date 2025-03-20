@@ -33,24 +33,17 @@
 
             <!-- Вкладка Технологии -->
             <Tab text="Технологии" closable="false">
-                <content>
-                    <AnchorPane fx:id="technologiesTab"/>
-                </content>
+                <fx:include source="technologies-tab.fxml" />
+
             </Tab>
 
-            <!-- Вкладка Группы -->
-            <Tab text="Группы" closable="false">
-                <content>
-                    <AnchorPane fx:id="groupsTab"/>
-                </content>
+
+            <!-- Вкладка Проекты -->
+            <Tab text="Проекты" closable="false">
+                <fx:include source="projects-tab.fxml" />
+
             </Tab>
 
-            <!-- Вкладка Отчеты -->
-            <Tab text="Отчеты" closable="false">
-                <content>
-                    <AnchorPane fx:id="reportsTab" />
-                </content>
-            </Tab>
         </TabPane>
     </center>
 </BorderPane>

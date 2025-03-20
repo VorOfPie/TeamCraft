@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.vorofpie.teamcraft.controller.ProjectController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <Label text="Проект:" layoutX="20.0" layoutY="60.0"/>
+    <ComboBox fx:id="projectComboBox" layoutX="20.0" layoutY="20.0" prefWidth="200.0"
+              onAction="#handleProjectSelection">
+        <items>
+            <!-- Здесь будут добавлены проекты из контроллера -->
+        </items>
+    </ComboBox>
+
+    <Label text="Команды:" layoutX="20.0" layoutY="60.0"/>
+    <ComboBox fx:id="groupComboBox" layoutX="20.0" layoutY="80.0" prefWidth="200.0" onAction="#handleGroupSelection">
+        <items>
+            <!-- Здесь будут добавлены группы из контроллера -->
+        </items>
+    </ComboBox>
+
+    <Label text="Программисты:" layoutX="250.0" layoutY="60.0"/>
+    <TableView fx:id="programmerTableView" layoutX="250.0" layoutY="80.0" prefWidth="330.0" prefHeight="300.0">
+        <columns>
+            <TableColumn text="Имя" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="name"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Email" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="email"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Опыт (лет)" prefWidth="80">
+                <cellValueFactory>
+                    <PropertyValueFactory property="experienceYears"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+
+</AnchorPane>

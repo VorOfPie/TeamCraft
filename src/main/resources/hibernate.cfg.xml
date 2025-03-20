@@ -29,9 +29,7 @@
         <mapping class="com.vorofpie.teamcraft.model.SkillLevel"/>
         <mapping class="com.vorofpie.teamcraft.model.Group"/>
         <mapping class="com.vorofpie.teamcraft.model.GroupMember"/>
-        <mapping class="com.vorofpie.teamcraft.model.History"/>
         <mapping class="com.vorofpie.teamcraft.model.Threshold"/>
-        <mapping class="com.vorofpie.teamcraft.model.TechnologyRating"/>
         <mapping class="com.vorofpie.teamcraft.model.Project"/>
 
     </session-factory>

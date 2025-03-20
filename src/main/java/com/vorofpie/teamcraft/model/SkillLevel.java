@@ -1,17 +1,14 @@
 package com.vorofpie.teamcraft.model;
 
-import com.vorofpie.teamcraft.model.Programmer;
-import com.vorofpie.teamcraft.model.Technology;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "skill_levels")
+@ToString(exclude = {"programmer", "technology"})
 public class SkillLevel {
 
     @Id
@@ -21,6 +18,7 @@ public class SkillLevel {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "programmer_id", nullable = false)
+    @EqualsAndHashCode.Exclude
     private Programmer programmer;
 
     @ManyToOne(fetch = FetchType.LAZY)

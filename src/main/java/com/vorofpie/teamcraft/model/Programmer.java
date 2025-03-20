@@ -1,18 +1,19 @@
 package com.vorofpie.teamcraft.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "programmers")
+@ToString(exclude = "skillLevels")
 public class Programmer {
 
     @Id
@@ -35,11 +36,14 @@ public class Programmer {
     @Column(name = "company")
     private String company;
 
-    @OneToMany(mappedBy = "programmer", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "programmer", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private Set<SkillLevel> skillLevels = new HashSet<>();
 
-    public void addSkillLevel(SkillLevel skillLevel) {
-        skillLevels.add(skillLevel);
-        skillLevel.setProgrammer(this);
+
+    // Метод для получения списка технологий и их уровней
+    public List<String> getSkillsInfo() {
+        return skillLevels.stream()
+                .map(skillLevel -> skillLevel.getTechnology().getName() + ": " + skillLevel.getLevel())
+                .collect(Collectors.toList());
     }
 }
