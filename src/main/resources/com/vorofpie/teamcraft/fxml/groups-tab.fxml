@@ -39,7 +39,7 @@
         <!-- Правая часть: Таблица программистов -->
         <VBox spacing="10">
             <Label text="Программисты в группе:"/>
-            <TableView fx:id="programmersTable" prefWidth="400" maxWidth="400" prefHeight="300">
+            <TableView fx:id="programmersTable" prefWidth="800" maxWidth="800" prefHeight="500">
                 <columns>
                     <!-- Колонка для имени программиста -->
                     <TableColumn fx:id="nameColumn" text="Имя" prefWidth="150">
@@ -55,17 +55,11 @@
                         </cellValueFactory>
                     </TableColumn>
 
-                    <!-- Колонка для образования программиста -->
-                    <TableColumn fx:id="educationColumn" text="Образование" prefWidth="150">
-                        <cellValueFactory>
-                            <PropertyValueFactory property="education"/>
-                        </cellValueFactory>
-                    </TableColumn>
 
-                    <!-- Колонка для компании программиста -->
-                    <TableColumn fx:id="companyColumn" text="Компания" prefWidth="150">
+                    <!-- Колонка для скиллов программиста -->
+                    <TableColumn fx:id="skillsColumn" text="Навыки" prefWidth="450">
                         <cellValueFactory>
-                            <PropertyValueFactory property="company"/>
+                            <PropertyValueFactory property="skillsColumn"/>
                         </cellValueFactory>
                     </TableColumn>
                 </columns>

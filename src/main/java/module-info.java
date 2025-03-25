@@ -5,6 +5,7 @@ module com.vorofpie.teamcraft {
     requires static lombok;
     requires jakarta.persistence;
     requires java.naming;
+    requires jakarta.transaction;
     opens com.vorofpie.teamcraft.model to org.hibernate.orm.core, javafx.base;
     opens com.vorofpie.teamcraft.controller to javafx.fxml;
     exports com.vorofpie.teamcraft.app;

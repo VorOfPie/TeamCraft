@@ -4,6 +4,7 @@ import com.vorofpie.teamcraft.model.Group;
 import com.vorofpie.teamcraft.model.Project;
 import com.vorofpie.teamcraft.util.HibernateUtil;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.util.HashSet;
 import java.util.List;
@@ -46,4 +47,21 @@ public class ProjectRepository {
             return null;
         }
     }
+
+    public void save(Project project) {
+        Transaction transaction = null;  // Для обработки транзакции
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();  // Начинаем транзакцию
+
+            session.persist(project);  // Сохраняем объект в базе данных
+
+            transaction.commit();  // Завершаем транзакцию
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();  // Откатываем транзакцию в случае ошибки
+            }
+            e.printStackTrace();
+        }
+    }
+
 }

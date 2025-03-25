@@ -18,7 +18,6 @@
             <TableColumn fx:id="experienceYearsColumn" text="Опыт (лет)" />
             <TableColumn fx:id="educationColumn" text="Образование" />
             <TableColumn fx:id="companyColumn" text="Компания" />
-            <!-- Добавляем колонку для навыков -->
             <TableColumn fx:id="skillsColumn" text="Навыки" />
         </columns>
     </TableView>
